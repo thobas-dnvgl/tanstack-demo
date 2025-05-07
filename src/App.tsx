@@ -33,14 +33,13 @@ export const AddressesDataSchema = z
 //     }),
 //   ]
 // );
-export type AddressesData = z.infer<typeof AddressesDataSchema>;
+export type AddressesData = z.input<typeof AddressesDataSchema>;
 
 function App() {
-  const defaultValues = {
+  const defaultValues: AddressesData = {
     separateBillingAddress: false,
     mailingAddress: "",
     billingAddress: "",
-    // } satisfies AddressesData;
   };
   const form = useForm({
     defaultValues,
